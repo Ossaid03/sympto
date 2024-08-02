@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./static/style.css" />
+    <link
+      rel="stylesheet"
+      href="./static/fontawesome-free-5.15.3-web/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "ouRshSxjGDpF2Flqp",
+        });
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <img src="../static/images/logo1.png" id="logo" alt="" />
+      <h1 class="companyname">SYMPTO SCAN</h1>
+      <nav class="navbar">
+        <a onclick="window.location.href='/'">home</a>
+        <a onclick="window.location.href='/about'">about</a>
+        <a onclick="window.location.href='/services'">services</a>
+        <a onclick="window.location.href='/gallery'">gallery</a>
+        <a onclick="window.location.href='/affiliation'">Affiliation</a>
+        <a onclick="window.location.href='/contact_us'">contact us</a>
+      </nav>
+    </header>
+
+    <div class="appointment">
+      <div class="appointment_heading">
+        <h1>Doctor Appointment Request Form</h1>
+        <p>Kindly fill the detail to book the appointment</p>
+        <br />
+      </div>
+      <div class="appointment_form">
+        <form id="appointmentForm" class="styled-form">
+          <label for="name">Name:</label><br />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name here"
+          /><br />
+
+          <label for="age">Age:</label><br />
+          <input
+            type="number"
+            id="age"
+            name="age"
+            placeholder="Enter your age"
+          /><br />
+          <label for="contact">Contact Number:</label><br />
+          <input
+            type="text"
+            id="contact"
+            name="contact"
+            placeholder="0300-1234567"
+          /><br />
+          <label for="email">Email Address:</label><br />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="abc@gmail.com"
+            oninput="convertToLowercase()"
+          /><br />
+
+          <label for="appointmentDate">Appointment Date:</label><br />
+          <input
+            type="date"
+            id="appointmentDate"
+            name="appointmentDate"
+          /><br />
+          <label for="appointmentTime">Appointment Time:</label><br />
+          <select id="appointmentTime" name="appointmentTime">
+            <option value="Morning">Morning</option>
+            <option value="Afternoon">Afternoon</option>
+            <option value="Evening">Evening</option></select
+          ><br />
+
+          <label for="reason">Brief Reason for Appointment:</label><br />
+          <textarea id="reason" name="reason" rows="4" cols="50"></textarea>
+          <br />
+          <input type="submit" onclick="sendmail(event)" value="Submit" />
+        </form>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <ul class="social-icon">
+        <li class="social-icon__item">
+          <a
+            class="social-icon__link"
+            target="_blank"
+            href="https://www.facebook.com/drnazshaffan"
+          >
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+        </li>
+        <li class="social-icon__item">
+          <a
+            class="social-icon__link"
+            target="_blank"
+            href="https://www.facebook.com/TwitterInc/"
+          >
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a>
+        </li>
+        <li class="social-icon__item">
+          <a
+            class="social-icon__link"
+            target="_blank"
+            href="https://www.linkedin.com/in/dr-ansari-sarwar-alam-05925212a/"
+          >
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
+        </li>
+        <li class="social-icon__item">
+          <a
+            class="social-icon__link"
+            target="_blank"
+            href="https://www.instagram.com/dr_arooba/?hl=en"
+          >
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+        </li>
+      </ul>
+      <ul class="menu">
+        <li class="menu__item">
+          <a class="menu__link" onclick="window.location.href='/'">Home</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" onclick="window.location.href='/about'"
+            >About</a
+          >
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" onclick="window.location.href='/services'"
+            >Services</a
+          >
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" onclick="window.location.href='/gallery'"
+            >Gallery</a
+          >
+          <li class="menu__item">
+            <a class="menu__link" onclick="window.location.href='/affiliation'">Affiliation</a>
+          </li>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" onclick="window.location.href='/contact_us'"
+            >Contact</a
+          >
+        </li>
+      </ul>
+      <p>&copy;2024 Sympto Scan | All Rights Reserved</p>
+    </footer>
+    <script>
+      function sendmail(event) {
+        event.preventDefault();
+        var name = document.getElementById("name").value;
+        var age = document.getElementById("age").value;
+        var contact = document.getElementById("contact").value;
+        var email = document.getElementById("email").value;
+        var appointmentDate = document.getElementById("appointmentDate").value;
+        var appointmentTime = document.getElementById("appointmentTime").value;
+        var reason = document.getElementById("reason").value;
+        if (!name || !age || !contact || !email || !appointmentDate || !appointmentTime || !reason) {
+                alert('Please fill all the fields.');
+                return;
+            }
+        var templateParams = {
+          name: name,
+          age: age,
+          contact: contact,
+          email: email,
+          appointmentDate: appointmentDate,
+          appointmentTime: appointmentTime,
+          reason: reason,
+        };
+        emailjs
+          .send("service_iitxwh2", "template_nzgvpl9", templateParams)
+          .then(
+            function (response) {
+              console.log("SUCCESS!", response.status, response.text);
+              alert("Your appointment request has been sent successfully!");
+              document.getElementById("appointmentForm").reset();
+            },
+            function (error) {
+              console.log("FAILED...", error);
+              alert(
+                "Failed to send your appointment request. Please try again."
+              );
+            }
+          );
+      }
+    </script>
+    <!-- <script src="{{ url_for('static', filename='script.js') }}"></script> -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

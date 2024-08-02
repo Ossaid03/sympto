@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Check Medical Store</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./static/style.css">
+    <link rel="stylesheet" href="./static/fontawesome-free-5.15.3-web/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+  </head>
+  <header class="header">
+    <img src="../static/images/logo1.png" id="logo" alt="" />
+    <h1 class="companyname">SYMPTO SCAN</h1>
+    <nav class="navbar">
+      <a onclick="window.location.href='/'">home</a>
+      <a onclick="window.location.href='/about'">about</a>
+      <a onclick="window.location.href='/services'">services</a>
+      <a onclick="window.location.href='/gallery'">gallery</a>
+      <a onclick="window.location.href='/affiliation'">Affiliation</a>
+      <a onclick="window.location.href='/contact_us'">contact us</a>
+    </nav>
+  </header>
+  <body>
+    <div class="table">
+        <h1 id="table_heading">
+          List of Medical Store in Islamabad
+        </h1>
+        <table>
+          <tr>
+            <th>Sr.No</th>
+            <th>Name</th>
+            <th>City</address></th>
+            <th>Contact No</th>        
+            <th>Address</th>
+            <th>Location</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>KULSUM PHARMACY</td>
+            <td>Islamabad</td>
+            <td>+92-51-8446666</td>
+            <td>kulsUm hospital plaza، Jinnah Ave, Islamabad, Pakistan</td>
+            <td><button class="locationbtn" id="myBtn" onclick="location1()">Click Here</button></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>ZAINAB PHARMACY</td>
+            <td>Islamabad</td>
+            <td>+92-51-234095</td>
+            <td>Medicine Plaza, G-8 Markaz, opposite Hanna Road, Islamabad, 44000, Pakistan</td>
+            <td><button class="locationbtn" id="button2" onclick="location2()">Click Here</button></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>SHAHEEN CHEMIST</td>
+            <td>Islamabad</td>
+            <td>+92-51-2804029</td>
+            <td>Din Pavallions Plaza, Jinnah Ave, Block I, Blue Area, Islamabad</td>
+            <td><button class="locationbtn" id="button3" onclick="location3()">Click Here</button></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>MINAHIL PHARMACY</td>
+            <td>Islamabad</td>
+            <td>+92-51-2606816</td>
+            <td>Khosar Plaza, Sitara Market, G-7 Markaz, Islamabad</td>
+            <td><button class="locationbtn" id="button4" onclick="location4()">Click Here</button></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>AL-HAMD PHARMACY</td>
+            <td>Islamabad</td>
+            <td>92-51-2603331</td>
+            <td>Ground Floor, Mir Square, G-6 Markaz, Islamabad</td>
+            <td><button class="locationbtn" id="button5" onclick="location5()">Click Here</button></td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>D LIGHT MEDICAL STORE</td>
+            <td>Islamabad</td>
+            <td>+92-51-2347363</td>
+            <td>AKM Fazl-ul-Haq Rd, Khyber Plaza,Block I Blue Area, Islamabad</td>
+            <td><button class="locationbtn" id="button6" onclick="location6()">Click Here</button></td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>PAKISTAN PHARMACY</td>
+            <td>Islamabad</td>
+            <td>+92-51-2340024</td>
+            <td>Markaz Rd,G 8 Markaz, Islamabad</td>
+            <td><button class="locationbtn" id="button7"
+              onclick="location7()">Click Here</button></td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>AL-KAUSAR PHARMACY</td>
+            <td>Islamabad</td>
+            <td>+92-51-8311550</td>
+            <td>School Rd, F-6 Markaz,Islamabad</td>
+            <td><button class="locationbtn" id="button8"
+              onclick="location8()">Click Here</button></td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>MAROOF PHARMACY</td>
+            <td>Islamabad</td>
+            <td>+92-51-2222920</td>
+            <td>Maroof International Hospital, F-10 Markaz, F10/3, Islamabad</td>
+            <td><button class="locationbtn" id="button9"
+              onclick="location9()">Click Here</button></td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>NAJEEB PHARMACY</td>
+            <td>Islamabad</td>
+            <td>+92-51-2107676</td>
+            <td>Near Jamil sweets, F-10 Markaz, F 10/3, Islamabad</td>
+            <td><button class="locationbtn" id="button10" onclick="location10()">Click Here</button></td>
+          </tr>
+        </table>
+      </div>
+      <footer class="footer">
+        <ul class="social-icon">
+          <li class="social-icon__item">
+            <a
+              class="social-icon__link"
+              target="_blank"
+              href="https://www.facebook.com/drnazshaffan"
+            >
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+          <li class="social-icon__item">
+            <a
+              class="social-icon__link"
+              target="_blank"
+              href="https://www.facebook.com/TwitterInc/"
+            >
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+          <li class="social-icon__item">
+            <a
+              class="social-icon__link"
+              target="_blank"
+              href="https://www.linkedin.com/in/dr-ansari-sarwar-alam-05925212a/"
+            >
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+          <li class="social-icon__item">
+            <a
+              class="social-icon__link"
+              target="_blank"
+              href="https://www.instagram.com/dr_arooba/?hl=en"
+            >
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+        </ul>
+        <ul class="menu">
+          <li class="menu__item">
+            <a class="menu__link" onclick="window.location.href='/'">Home</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" onclick="window.location.href='/about'">About</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" onclick="window.location.href='/services'">Services</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" onclick="window.location.href='/gallery'">Gallery</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" onclick="window.location.href='/affiliation'">Affiliation</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" onclick="window.location.href='/contact_us'">Contact</a>
+          </li>
+        </ul>
+        <p>&copy;2024 Sympto Scan | All Rights Reserved</p>
+      </footer>
+      <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+  </body>
+</html>

@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Symptoms Logistic</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./static/style.css" />
+    <link
+      rel="stylesheet"
+      href="./static/fontawesome-free-5.15.3-web/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <img src="../static/images/logo1.png" id="logo" alt="" />
+      <h1 class="companyname">SYMPTO SCAN</h1>
+      <nav class="navbar">
+        <a onclick="window.location.href='/'">home</a>
+        <a onclick="window.location.href='/about'">about</a>
+        <a onclick="window.location.href='/services'">services</a>
+        <a onclick="window.location.href='/gallery'">gallery</a>
+        <a onclick="window.location.href='/affiliation'">Affiliation</a>
+        <a onclick="window.location.href='/contact_us'">contact us</a>
+      </nav>
+    </header>
+   <div class="logistic">
+      <div class="heading"><h1>Please Select the Symptoms</h1></div>
+      <div class="symptom">
+        <div class="one">
+          <form id="symptomForm" action="/predict" method="post">
+            <div class="rows">
+              <div class="checkboxes">
+                <label for="sudden_fever">Sudden Fever:</label>
+                <input
+                  type="radio"
+                  id="sudden_fever_yes"
+                  name="sudden_fever"
+                  value="1"
+                />
+                <label for="sudden_fever_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="sudden_fever_no"
+                  name="sudden_fever"
+                  value="0"
+                  checked
+                />
+                <label for="sudden_fever_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="headache">Headache:</label>
+                <input
+                  type="radio"
+                  id="headache_yes"
+                  name="headache"
+                  value="1"
+                />
+                <label for="headache_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="headache_no"
+                  name="headache"
+                  value="0"
+                  checked
+                />
+                <label for="headache_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="mouth_bleed">Mouth Bleed:</label>
+                <input
+                  type="radio"
+                  id="mouth_bleed_yes"
+                  name="mouth_bleed"
+                  value="1"
+                />
+                <label for="mouth_bleed_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="mouth_bleed_no"
+                  name="mouth_bleed"
+                  value="0"
+                  checked
+                />
+                <label for="mouth_bleed_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="nose_bleed">Nose Bleed:</label>
+                <input
+                  type="radio"
+                  id="nose_bleed_yes"
+                  name="nose_bleed"
+                  value="1"
+                />
+                <label for="nose_bleed_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="nose_bleed_no"
+                  name="nose_bleed"
+                  value="0"
+                  checked
+                />
+                <label for="nose_bleed_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="muscle_pain">Muscle Pain:</label>
+                <input
+                  type="radio"
+                  id="muscle_pain_yes"
+                  name="muscle_pain"
+                  value="1"
+                />
+                <label for="muscle_pain_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="muscle_pain_no"
+                  name="muscle_pain"
+                  value="0"
+                  checked
+                />
+                <label for="muscle_pain_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="joint_pain">Joint Pain:</label>
+                <input
+                  type="radio"
+                  id="joint_pain_yes"
+                  name="joint_pain"
+                  value="1"
+                />
+                <label for="joint_pain_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="joint_pain_no"
+                  name="joint_pain"
+                  value="0"
+                  checked
+                />
+                <label for="joint_pain_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="vomiting">Vomiting:</label>
+                <input
+                  type="radio"
+                  id="vomiting_yes"
+                  name="vomiting"
+                  value="1"
+                />
+                <label for="vomiting_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="vomiting_no"
+                  name="vomiting"
+                  value="0"
+                  checked
+                />
+                <label for="vomiting_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="rash">Rash:</label>
+                <input
+                  type="radio"
+                  id="rash_yes"
+                  name="rash"
+                  value="1"
+                />
+                <label for="rash_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="rash_no"
+                  name="rash"
+                  value="0"
+                  checked
+                />
+                <label for="rash_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="diarrhea">Diarrhea:</label>
+                <input
+                  type="radio"
+                  id="diarrhea_yes"
+                  name="diarrhea"
+                  value="1"
+                />
+                <label for="diarrhea_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="diarrhea_no"
+                  name="diarrhea"
+                  value="0"
+                  checked
+                />
+                <label for="diarrhea_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="pleural_effusion">Pleural Effusion:</label>
+                <input
+                  type="radio"
+                  id="pleural_effusion_yes"
+                  name="pleural_effusion"
+                  value="1"
+                />
+                <label for="pleural_effusion_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="pleural_effusion_no"
+                  name="pleural_effusion"
+                  value="0"
+                  checked
+                />
+                <label for="pleural_effusion_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="ascites">Ascites:</label>
+                <input
+                  type="radio"
+                  id="ascites_yes"
+                  name="ascites"
+                  value="1"
+                />
+                <label for="ascites_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="ascites_no"
+                  name="ascites"
+                  value="0"
+                  checked
+                />
+                <label for="ascites_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="swelling">Swelling:</label>
+                <input
+                  type="radio"
+                  id="swelling_yes"
+                  name="swelling"
+                  value="1"
+                />
+                <label for="swelling_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="swelling_no"
+                  name="swelling"
+                  value="0"
+                  checked
+                />
+                <label for="swelling_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="nausea">Nausea:</label>
+                <input
+                  type="radio"
+                  id="nausea_yes"
+                  name="nausea"
+                  value="1"
+                />
+                <label for="nausea_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="nausea_no"
+                  name="nausea"
+                  value="0"
+                  checked
+                />
+                <label for="nausea_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="chills">Chills:</label>
+                <input
+                  type="radio"
+                  id="chills_yes"
+                  name="chills"
+                  value="1"
+                />
+                <label for="chills_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="chills_no"
+                  name="chills"
+                  value="0"
+                  checked
+                />
+                <label for="chills_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="myalgia">Myalgia:</label>
+                <input
+                  type="radio"
+                  id="myalgia_yes"
+                  name="myalgia"
+                  value="1"
+                />
+                <label for="myalgia_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="myalgia_no"
+                  name="myalgia"
+                  value="0"
+                  checked
+                />
+                <label for="myalgia_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="digestion_trouble">Digestion Trouble:</label>
+                <input
+                  type="radio"
+                  id="digestion_trouble_yes"
+                  name="digestion_trouble"
+                  value="1"
+                />
+                <label for="digestion_trouble_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="digestion_trouble_no"
+                  name="digestion_trouble"
+                  value="0"
+                  checked
+                />
+                <label for="digestion_trouble_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="fatigue">Fatigue:</label>
+                <input
+                  type="radio"
+                  id="fatigue_yes"
+                  name="fatigue"
+                  value="1"
+                />
+                <label for="fatigue_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="fatigue_no"
+                  name="fatigue"
+                  value="0"
+                  checked
+                />
+                <label for="fatigue_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="stomach_pain">Stomach Pain:</label>
+                <input
+                  type="radio"
+                  id="stomach_pain_yes"
+                  name="stomach_pain"
+                  value="1"
+                />
+                <label for="stomach_pain_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="stomach_pain_no"
+                  name="stomach_pain"
+                  value="0"
+                  checked
+                />
+                <label for="stomach_pain_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="orbital_pain">Orbital Pain:</label>
+                <input
+                  type="radio"
+                  id="orbital_pain_yes"
+                  name="orbital_pain"
+                  value="1"
+                />
+                <label for="orbital_pain_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="orbital_pain_no"
+                  name="orbital_pain"
+                  value="0"
+                  checked
+                />
+                <label for="orbital_pain_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="neck_pain">Neck Pain:</label>
+                <input
+                  type="radio"
+                  id="neck_pain_yes"
+                  name="neck_pain"
+                  value="1"
+                />
+                <label for="neck_pain_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="neck_pain_no"
+                  name="neck_pain"
+                  value="0"
+                  checked
+                />
+                <label for="neck_pain_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="weakness">Weakness:</label>
+                <input
+                  type="radio"
+                  id="weakness_yes"
+                  name="weakness"
+                  value="1"
+                />
+                <label for="weakness_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="weakness_no"
+                  name="weakness"
+                  value="0"
+                  checked
+                />
+                <label for="weakness_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="back_pain">Back Pain:</label>
+                <input
+                  type="radio"
+                  id="back_pain_yes"
+                  name="back_pain"
+                  value="1"
+                />
+                <label for="back_pain_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="back_pain_no"
+                  name="back_pain"
+                  value="0"
+                  checked
+                />
+                <label for="back_pain_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="weight_loss">Weight loss:</label>
+                <input
+                  type="radio"
+                  id="weight_loss_yes"
+                  name="weight_loss"
+                  value="1"
+                />
+                <label for="weight_loss_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="weight_loss_no"
+                  name="weight_loss"
+                  value="0"
+                  checked
+                />
+                <label for="weight_loss_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="gum_bleed">Gum Bleed:</label>
+                <input
+                  type="radio"
+                  id="gum_bleed_yes"
+                  name="gum_bleed"
+                  value="1"
+                />
+                <label for="gum_bleed_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="gum_bleed_no"
+                  name="gum_bleed"
+                  value="0"
+                  checked
+                />
+                <label for="gum_bleed_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="jaundice">Jaundice:</label>
+                <input
+                  type="radio"
+                  id="jaundice_yes"
+                  name="jaundice"
+                  value="1"
+                />
+                <label for="jaundice_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="jaundice_no"
+                  name="jaundice"
+                  value="0"
+                  checked
+                />
+                <label for="jaundice_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="diziness">Diziness:</label>
+                <input
+                  type="radio"
+                  id="diziness_yes"
+                  name="diziness"
+                  value="1"
+                />
+                <label for="diziness_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="diziness_no"
+                  name="diziness"
+                  value="0"
+                  checked
+                />
+                <label for="diziness_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="inflammation">Inflammation:</label>
+                <input
+                  type="radio"
+                  id="inflammation_yes"
+                  name="inflammation"
+                  value="1"
+                />
+                <label for="inflammation_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="inflammation_no"
+                  name="inflammation"
+                  value="0"
+                  checked
+                />
+                <label for="inflammation_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="red_eyes">Red Eyes:</label>
+                <input
+                  type="radio"
+                  id="red_eyes_yes"
+                  name="red_eyes"
+                  value="1"
+                />
+                <label for="red_eyes_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="red_eyes_no"
+                  name="red_eyes"
+                  value="0"
+                  checked
+                />
+                <label for="red_eyes_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="loss_of_appetite">Loss of Appetite:</label>
+                <input
+                  type="radio"
+                  id="loss_of_appetite_yes"
+                  name="loss_of_appetite"
+                  value="1"
+                />
+                <label for="loss_of_appetite_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="loss_of_appetite_no"
+                  name="loss_of_appetite"
+                  value="0"
+                  checked
+                />
+                <label for="loss_of_appetite_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="urination_loss">Uination Loss</label>
+                <input
+                  type="radio"
+                  id="urination_loss_yes"
+                  name="urination_loss"
+                  value="1"
+                />
+                <label for="urination_loss_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="urination_loss_no"
+                  name="urination_loss"
+                  value="0"
+                  checked
+                />
+                <label for="urination_loss_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="abdominal_pain">Abdominal Pain:</label>
+                <input
+                  type="radio"
+                  id="abdominal_pain_yes"
+                  name="abdominal_pain"
+                  value="1"
+                />
+                <label for="abdominal_pain_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="abdominal_pain_no"
+                  name="abdominal_pain"
+                  value="0"
+                  checked
+                />
+                <label for="abdominal_pain_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="yellow_skin">Yellow Skin:</label>
+                <input
+                  type="radio"
+                  id="yellow_skin_yes"
+                  name="yellow_skin"
+                  value="1"
+                />
+                <label for="yellow_skin_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="yellow_skin_no"
+                  name="yellow_skin"
+                  value="0"
+                  checked
+                />
+                <label for="yellow_skin_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="yellow_eyes">Yellow Eyes:</label>
+                <input
+                  type="radio"
+                  id="yellow_eyes_yes"
+                  name="yellow_eyes"
+                  value="1"
+                />
+                <label for="yellow_eyes_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="yellow_eyes_no"
+                  name="yellow_eyes"
+                  value="0"
+                  checked
+                />
+                <label for="yellow_eyes_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="rigor">Rigor:</label>
+                <input
+                  type="radio"
+                  id="rigor_yes"
+                  name="rigor"
+                  value="1"
+                />
+                <label for="rigor_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="rigor_no"
+                  name="rigor"
+                  value="0"
+                  checked
+                />
+                <label for="rigor_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="bitter_tougue">Bitter Tougue:</label>
+                <input
+                  type="radio"
+                  id="bitter_tougue_yes"
+                  name="bitter_tougue"
+                  value="1"
+                />
+                <label for="bitter_tougue_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="bitter_tougue_no"
+                  name="bitter_tougue"
+                  value="0"
+                  checked
+                />
+                <label for="bitter_tougue_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="convulsion">Convulsion:</label>
+                <input
+                  type="radio"
+                  id="convulsion_yes"
+                  name="convulsion"
+                  value="1"
+                />
+                <label for="convulsion_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="convulsion_no"
+                  name="convulsion"
+                  value="0"
+                  checked
+                />
+                <label for="convulsion_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="anemia">Anemia:</label>
+                <input
+                  type="radio"
+                  id="anemia_yes"
+                  name="anemia"
+                  value="1"
+                />
+                <label for="anemia_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="anemia_no"
+                  name="anemia"
+                  value="0"
+                  checked
+                />
+                <label for="anemia_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="cocacola_urine">Cocacola Urine:</label>
+                <input
+                  type="radio"
+                  id="cocacola_urine_yes"
+                  name="cocacola_urine"
+                  value="1"
+                />
+                <label for="cocacola_urine_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="cocacola_urine_no"
+                  name="cocacola_urine"
+                  value="0"
+                  checked
+                />
+                <label for="cocacola_urine_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="prostraction">Prostraction:</label>
+                <input
+                  type="radio"
+                  id="prostraction_yes"
+                  name="prostraction"
+                  value="1"
+                />
+                <label for="prostraction_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="prostraction_no"
+                  name="prostraction"
+                  value="0"
+                  checked
+                />
+                <label for="prostraction_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="stiff_neck">Stiff Neck:</label>
+                <input
+                  type="radio"
+                  id="stiff_neck_yes"
+                  name="stiff_neck"
+                  value="1"
+                />
+                <label for="stiff_neck_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="stiff_neck_no"
+                  name="stiff_neck"
+                  value="0"
+                  checked
+                />
+                <label for="stiff_neck_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="irritability">Irritability:</label>
+                <input
+                  type="radio"
+                  id="irritability_yes"
+                  name="irritability"
+                  value="1"
+                />
+                <label for="irritability_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="irritability_no"
+                  name="irritability"
+                  value="0"
+                  checked
+                />
+                <label for="irritability_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="lymph_swells">Lymph Swells:</label>
+                <input
+                  type="radio"
+                  id="lymph_swells_yes"
+                  name="lymph_swells"
+                  value="1"
+                />
+                <label for="lymph_swells_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="lymph_swells_no"
+                  name="lymph_swells"
+                  value="0"
+                  checked
+                />
+                <label for="lymph_swells_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="breathing_restriction">Breathing Restriction:</label>
+                <input
+                  type="radio"
+                  id="breathing_restriction_yes"
+                  name="breathing_restriction"
+                  value="1"
+                />
+                <label for="breathing_restriction_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="breathing_restriction_no"
+                  name="breathing_restriction"
+                  value="0"
+                  checked
+                />
+                <label for="breathing_restriction_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="itchiness">Itchiness:</label>
+                <input
+                  type="radio"
+                  id="itchiness_yes"
+                  name="itchiness"
+                  value="1"
+                />
+                <label for="itchiness_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="itchiness_no"
+                  name="itchiness"
+                  value="0"
+                  checked
+                />
+                <label for="itchiness_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="ulcers">Ulcers:</label>
+                <input
+                  type="radio"
+                  id="ulcers_yes"
+                  name="ulcers"
+                  value="1"
+                />
+                <label for="ulcers_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="ulcers_no"
+                  name="ulcers"
+                  value="0"
+                  checked
+                />
+                <label for="ulcers_no">No</label>
+              </div>
+              <div class="checkboxes">
+                <label for="toenail_loss">Toenail Loss:</label>
+                <input
+                  type="radio"
+                  id="toenail_loss_yes"
+                  name="toenail_loss"
+                  value="1"
+                />
+                <label for="toenail_loss_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="toenail_loss_no"
+                  name="toenail_loss"
+                  value="0"
+                  checked
+                />
+                <label for="toenail_loss_no">No</label>
+              </div >
+              <div class="checkboxes">
+                <label for="bullseye_rash">Bullseye Rash:</label>
+                <input
+                  type="radio"
+                  id="bullseye_rash_yes"
+                  name="bullseye_rash"
+                  value="1"
+                />
+                <label for="bullseye_rash_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="bullseye_rash_no"
+                  name="bullseye_rash"
+                  value="0"
+                  checked
+                />
+                <label for="bullseye_rash_no">No</label>
+              </div >            
+            <div class="button-container">
+              <button type="submit" value="">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div> 
+
+    <footer class="footer">
+      <ul class="social-icon">
+        <li class="social-icon__item">
+          <a
+            class="social-icon__link"
+            target="_blank"
+            href="https://www.facebook.com/drnazshaffan"
+          >
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+        </li>
+        <li class="social-icon__item">
+          <a
+            class="social-icon__link"
+            target="_blank"
+            href="https://www.facebook.com/TwitterInc/"
+          >
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a>
+        </li>
+        <li class="social-icon__item">
+          <a
+            class="social-icon__link"
+            target="_blank"
+            href="https://www.linkedin.com/in/dr-ansari-sarwar-alam-05925212a/"
+          >
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
+        </li>
+        <li class="social-icon__item">
+          <a
+            class="social-icon__link"
+            target="_blank"
+            href="https://www.instagram.com/dr_arooba/?hl=en"
+          >
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+        </li>
+      </ul>
+      <ul class="menu">
+        <li class="menu__item">
+          <a class="menu__link" onclick="window.location.href='/'">Home</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" onclick="window.location.href='/about'"
+            >About</a
+          >
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" onclick="window.location.href='/services'"
+            >Services</a
+          >
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" onclick="window.location.href='/gallery'"
+            >Gallery</a
+          >
+          <li class="menu__item">
+            <a class="menu__link" onclick="window.location.href='/affiliation'">Affiliation</a>
+          </li>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" onclick="window.location.href='/contact_us'"
+            >Contact</a
+          >
+        </li>
+      </ul>
+      <p>&copy;2024 Sympto Scan | All Rights Reserved</p>
+    </footer>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
